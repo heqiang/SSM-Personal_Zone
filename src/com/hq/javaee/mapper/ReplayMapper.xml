@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.javaee.mapper.ReplayMapper">
+  <resultMap id="BaseResultMap" type="com.hq.javaee.pojo.Replay">
+    <id column="relayid" jdbcType="INTEGER" property="relayid" />
+    <result column="commentid" jdbcType="INTEGER" property="commentid" />
+    <result column="replayname" jdbcType="VARCHAR" property="replayname" />
+    <result column="replaycontetnt" jdbcType="VARCHAR" property="replaycontetnt" />
+    <result column="replaytime" jdbcType="DATE" property="replaytime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    relayid, commentid, replayname, replaycontetnt, replaytime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from replay
+    where relayid = #{relayid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from replay
+    where relayid = #{relayid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hq.javaee.pojo.Replay">
+    insert into replay (relayid, commentid, replayname, 
+      replaycontetnt, replaytime)
+    values (#{relayid,jdbcType=INTEGER}, #{commentid,jdbcType=INTEGER}, #{replayname,jdbcType=VARCHAR}, 
+      #{replaycontetnt,jdbcType=VARCHAR}, #{replaytime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hq.javaee.pojo.Replay">
+    insert into replay
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="relayid != null">
+        relayid,
+      </if>
+      <if test="commentid != null">
+        commentid,
+      </if>
+      <if test="replayname != null">
+        replayname,
+      </if>
+      <if test="replaycontetnt != null">
+        replaycontetnt,
+      </if>
+      <if test="replaytime != null">
+        replaytime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="relayid != null">
+        #{relayid,jdbcType=INTEGER},
+      </if>
+      <if test="commentid != null">
+        #{commentid,jdbcType=INTEGER},
+      </if>
+      <if test="replayname != null">
+        #{replayname,jdbcType=VARCHAR},
+      </if>
+      <if test="replaycontetnt != null">
+        #{replaycontetnt,jdbcType=VARCHAR},
+      </if>
+      <if test="replaytime != null">
+        #{replaytime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hq.javaee.pojo.Replay">
+    update replay
+    <set>
+      <if test="commentid != null">
+        commentid = #{commentid,jdbcType=INTEGER},
+      </if>
+      <if test="replayname != null">
+        replayname = #{replayname,jdbcType=VARCHAR},
+      </if>
+      <if test="replaycontetnt != null">
+        replaycontetnt = #{replaycontetnt,jdbcType=VARCHAR},
+      </if>
+      <if test="replaytime != null">
+        replaytime = #{replaytime,jdbcType=DATE},
+      </if>
+    </set>
+    where relayid = #{relayid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hq.javaee.pojo.Replay">
+    update replay
+    set commentid = #{commentid,jdbcType=INTEGER},
+      replayname = #{replayname,jdbcType=VARCHAR},
+      replaycontetnt = #{replaycontetnt,jdbcType=VARCHAR},
+      replaytime = #{replaytime,jdbcType=DATE}
+    where relayid = #{relayid,jdbcType=INTEGER}
+  </update>
+</mapper>

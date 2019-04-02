@@ -1,0 +1,112 @@
+* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body,ul,li,ol,dl,dd,p,h1,h2,h3,h4,h5,h6 {
+				margin: 0;
+			}
+			
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+			
+			img {
+				display: block;
+				border: none;
+			}
+			
+			ol,
+			ul {
+				list-style: none;
+			}
+			
+			.clearfix:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.fl {
+				float: left;
+			}
+			
+			.fr {
+				float: right;
+			}
+			
+			.main {
+				width: 500px;
+				margin: 100px auto;
+			}
+			
+			.main .box {
+				width: 500px;
+				height: 150px;
+				background: #ccc;
+				border-radius: 10px;
+				box-shadow: 0 0 10px 0 #000;
+				padding: 10px;
+			}
+			
+			.box .top textarea {
+				width: 100%;
+				height: 80px;
+				resize: none;
+				outline: none;
+			}
+			
+			.box .bottom .toux {
+				position: relative;
+				width: 40px;
+				height: 40px;
+				padding: 2px;
+				background: #fff;
+				margin-top: 10px;
+				border: 2px solid #999;
+			}
+			
+			.box .bottom .toux img {
+				position: absolute;
+				left: 2px;
+				top: 2px;
+				display: none;
+				width: 40px;
+				height: 40px;
+				cursor: pointer;
+			}
+			
+			.box .bottom .toux img.on {
+				display: block;
+			}
+			
+			.box .bottom .btn {
+				width: 100px;
+				height: 40px;
+				background: orangered;
+				margin-top: 10px;
+				font: 20px/40px "";
+				color: #fff;
+				text-align: center;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			
+			.main ul {
+				margin-top: 10px;
+			}
+			
+			.main .liuy li {
+				width: 500px;
+				border-bottom: 2px solid #999;
+				padding: 10px;
+			}
+			
+			.main .liuy li img {
+				width: 40px;
+				height: 40px;
+				padding: 2px;
+				border: 2px solid #999;
+				cursor: pointer;
+			}

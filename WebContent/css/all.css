@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+#particles-js{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-image: url(../img/猫.jpg);
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-left: auto;
+	margin-right: auto;
+}
+#tupian{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-image: url(../img/dog1.jpg);
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-left: auto;
+	margin-right: auto;
+
+}

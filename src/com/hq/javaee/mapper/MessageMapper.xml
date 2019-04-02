@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.javaee.mapper.MessageMapper">
+  <resultMap id="BaseResultMap" type="com.hq.javaee.pojo.Message">
+    <id column="messageid" jdbcType="INTEGER" property="messageid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="postid" jdbcType="INTEGER" property="postid" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="postname" jdbcType="VARCHAR" property="postname" />
+    <result column="posttime" jdbcType="DATE" property="posttime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    messageid, userid, postid, content, postname, posttime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where messageid = #{messageid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from message
+    where messageid = #{messageid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hq.javaee.pojo.Message">
+    insert into message (messageid, userid, postid, 
+      content, postname, posttime
+      )
+    values (#{messageid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{postid,jdbcType=INTEGER}, 
+      #{content,jdbcType=VARCHAR}, #{postname,jdbcType=VARCHAR}, #{posttime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hq.javaee.pojo.Message">
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="messageid != null">
+        messageid,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="postid != null">
+        postid,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="postname != null">
+        postname,
+      </if>
+      <if test="posttime != null">
+        posttime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="messageid != null">
+        #{messageid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="postid != null">
+        #{postid,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="postname != null">
+        #{postname,jdbcType=VARCHAR},
+      </if>
+      <if test="posttime != null">
+        #{posttime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hq.javaee.pojo.Message">
+    update message
+    <set>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="postid != null">
+        postid = #{postid,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="postname != null">
+        postname = #{postname,jdbcType=VARCHAR},
+      </if>
+      <if test="posttime != null">
+        posttime = #{posttime,jdbcType=DATE},
+      </if>
+    </set>
+    where messageid = #{messageid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hq.javaee.pojo.Message">
+    update message
+    set userid = #{userid,jdbcType=INTEGER},
+      postid = #{postid,jdbcType=INTEGER},
+      content = #{content,jdbcType=VARCHAR},
+      postname = #{postname,jdbcType=VARCHAR},
+      posttime = #{posttime,jdbcType=DATE}
+    where messageid = #{messageid,jdbcType=INTEGER}
+  </update>
+</mapper>

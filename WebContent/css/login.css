@@ -1,0 +1,124 @@
+body {
+	background-image: url(../img/regist_b.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+#login_frame {
+	width: 650px;
+	height:300px;
+	padding: 0px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -200px;
+	/*background-color:wheat;*/
+	border-radius: 10px;
+	text-align: center;
+}
+
+form p>* {
+	display: inline-block;
+	vertical-align: middle;
+}
+#image_logo {
+	margin-top: 22px;
+	;
+}
+
+.div1 {
+	font-size: 14px;
+	font-family: 宋体;
+	width: 65px;
+	height: 30px;
+	line-height: 28px;
+	text-align: center;
+	color: red;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	display: inline;
+	margin: 50px;
+	border:medium;
+	}
+
+
+.text_field {
+	width:260px;
+	height: 28px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom: 1px solid #dbdbdb;  
+	border-top:0px;  
+	border-left:0px;  
+	border-right:0px;  
+}
+input{
+	border: 1px solid red;
+	background-color: transparent;
+	border-bottom: 1px solid #dbdbdb;  
+ 
+}
+.regist_button {
+	font-size: 14px;
+	font-family: 宋体;
+	width: 350px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	color: white;
+	background-color: red;
+	border-radius: 6px;
+	border: 0;
+	left: 300px;
+
+}
+
+#forget_pwd {
+	font-size: 12px;
+	color: whitesmoke;
+	text-decoration: none;
+	position: relative;
+	float: right;
+	top: 5px;
+	left: 100px;
+}
+
+#forget_pwd:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+#login_control {
+	padding: 0 120px;
+	
+}
+.regist{
+	position: relative;
+	left: 100px;
+	right: 100px;
+}
+
+
+div{width:250px;height:50px;border:2px solid #ccc;margin:50px 80px;}
+.login_href{
+	float: right;
+}
+.login_href2{
+	color: red;
+}
+#usernametip{
+	color: red;
+}
+#passwordtip{
+	color: red;
+}
+#again_passwordtip{
+	color: red;
+}
+#emailtip{
+	color: red;
+}
+#addresstip{
+	color: red;
+}

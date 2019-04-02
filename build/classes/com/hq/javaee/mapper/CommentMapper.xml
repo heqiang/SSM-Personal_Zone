@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.javaee.mapper.CommentMapper">
+  <resultMap id="BaseResultMap" type="com.hq.javaee.pojo.Comment">
+    <id column="commentid" jdbcType="INTEGER" property="commentid" />
+    <result column="messageid" jdbcType="INTEGER" property="messageid" />
+    <result column="commentname" jdbcType="VARCHAR" property="commentname" />
+    <result column="commentcontent" jdbcType="VARCHAR" property="commentcontent" />
+    <result column="commenttime" jdbcType="DATE" property="commenttime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    commentid, messageid, commentname, commentcontent, commenttime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from comment
+    where commentid = #{commentid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from comment
+    where commentid = #{commentid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hq.javaee.pojo.Comment">
+    insert into comment (commentid, messageid, commentname, 
+      commentcontent, commenttime)
+    values (#{commentid,jdbcType=INTEGER}, #{messageid,jdbcType=INTEGER}, #{commentname,jdbcType=VARCHAR}, 
+      #{commentcontent,jdbcType=VARCHAR}, #{commenttime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hq.javaee.pojo.Comment">
+    insert into comment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="commentid != null">
+        commentid,
+      </if>
+      <if test="messageid != null">
+        messageid,
+      </if>
+      <if test="commentname != null">
+        commentname,
+      </if>
+      <if test="commentcontent != null">
+        commentcontent,
+      </if>
+      <if test="commenttime != null">
+        commenttime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="commentid != null">
+        #{commentid,jdbcType=INTEGER},
+      </if>
+      <if test="messageid != null">
+        #{messageid,jdbcType=INTEGER},
+      </if>
+      <if test="commentname != null">
+        #{commentname,jdbcType=VARCHAR},
+      </if>
+      <if test="commentcontent != null">
+        #{commentcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="commenttime != null">
+        #{commenttime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+
+   <insert id="insertBycomment" parameterType="com.hq.javaee.pojo.Comment">
+    insert into comment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="commentid != null">
+        commentid,
+      </if>
+      <if test="messageid != null">
+        messageid,
+      </if>
+      <if test="commentname != null">
+        commentname,
+      </if>
+      <if test="commentcontent != null">
+        commentcontent,
+      </if>
+      <if test="commenttime != null">
+        commenttime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="commentid != null">
+        #{commentid,jdbcType=INTEGER},
+      </if>
+      <if test="messageid != null">
+        #{messageid,jdbcType=INTEGER},
+      </if>
+      <if test="commentname != null">
+        #{commentname,jdbcType=VARCHAR},
+      </if>
+      <if test="commentcontent != null">
+        #{commentcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="commenttime != null">
+        #{commenttime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hq.javaee.pojo.Comment">
+    update comment
+    <set>
+      <if test="messageid != null">
+        messageid = #{messageid,jdbcType=INTEGER},
+      </if>
+      <if test="commentname != null">
+        commentname = #{commentname,jdbcType=VARCHAR},
+      </if>
+      <if test="commentcontent != null">
+        commentcontent = #{commentcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="commenttime != null">
+        commenttime = #{commenttime,jdbcType=DATE},
+      </if>
+    </set>
+    where commentid = #{commentid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hq.javaee.pojo.Comment">
+    update comment
+    set messageid = #{messageid,jdbcType=INTEGER},
+      commentname = #{commentname,jdbcType=VARCHAR},
+      commentcontent = #{commentcontent,jdbcType=VARCHAR},
+      commenttime = #{commenttime,jdbcType=DATE}
+    where commentid = #{commentid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.javaee.mapper.Leave_messageMapper">
+  <resultMap id="BaseResultMap" type="com.hq.javaee.pojo.Leave_message">
+    <id column="leavemessageid" jdbcType="INTEGER" property="leavemessageid" />
+    <result column="leavemessagepersonid" jdbcType="INTEGER" property="leavemessagepersonid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="leavemessagecontent" jdbcType="VARCHAR" property="leavemessagecontent" />
+    <result column="leavemessagetime" jdbcType="DATE" property="leavemessagetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    leavemessageid, leavemessagepersonid, userid, leavemessagecontent, leavemessagetime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from leave_message
+    where leavemessageid = #{leavemessageid,jdbcType=INTEGER}
+  </select>
+   <select id="selectbyuserid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from leave_message
+    where userid = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from leave_message
+    where leavemessageid = #{leavemessageid,jdbcType=INTEGER}
+  </delete>
+   <delete id="deleteByid" parameterType="java.lang.Integer">
+    delete from leave_message
+    where leavemessageid = #{leavemessageid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hq.javaee.pojo.Leave_message">
+    insert into leave_message (leavemessageid, leavemessagepersonid, 
+      userid, leavemessagecontent, leavemessagetime
+      )
+    values (#{leavemessageid,jdbcType=INTEGER}, #{leavemessagepersonid,jdbcType=INTEGER}, 
+      #{userid,jdbcType=INTEGER}, #{leavemessagecontent,jdbcType=VARCHAR}, #{leavemessagetime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hq.javaee.pojo.Leave_message">
+    insert into leave_message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="leavemessageid != null">
+        leavemessageid,
+      </if>
+      <if test="leavemessagepersonid != null">
+        leavemessagepersonid,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="leavemessagecontent != null">
+        leavemessagecontent,
+      </if>
+      <if test="leavemessagetime != null">
+        leavemessagetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="leavemessageid != null">
+        #{leavemessageid,jdbcType=INTEGER},
+      </if>
+      <if test="leavemessagepersonid != null">
+        #{leavemessagepersonid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="leavemessagecontent != null">
+        #{leavemessagecontent,jdbcType=VARCHAR},
+      </if>
+      <if test="leavemessagetime != null">
+        #{leavemessagetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+    <insert id="insertmessage" parameterType="com.hq.javaee.pojo.Leave_message">
+    insert into leave_message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="leavemessageid != null">
+        leavemessageid,
+      </if>
+      <if test="leavemessagepersonid != null">
+        leavemessagepersonid,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="leavemessagecontent != null">
+        leavemessagecontent,
+      </if>
+      <if test="leavemessagetime != null">
+        leavemessagetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="leavemessageid != null">
+        #{leavemessageid,jdbcType=INTEGER},
+      </if>
+      <if test="leavemessagepersonid != null">
+        #{leavemessagepersonid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="leavemessagecontent != null">
+        #{leavemessagecontent,jdbcType=VARCHAR},
+      </if>
+      <if test="leavemessagetime != null">
+        #{leavemessagetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hq.javaee.pojo.Leave_message">
+    update leave_message
+    <set>
+      <if test="leavemessagepersonid != null">
+        leavemessagepersonid = #{leavemessagepersonid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="leavemessagecontent != null">
+        leavemessagecontent = #{leavemessagecontent,jdbcType=VARCHAR},
+      </if>
+      <if test="leavemessagetime != null">
+        leavemessagetime = #{leavemessagetime,jdbcType=DATE},
+      </if>
+    </set>
+    where leavemessageid = #{leavemessageid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hq.javaee.pojo.Leave_message">
+    update leave_message
+    set leavemessagepersonid = #{leavemessagepersonid,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER},
+      leavemessagecontent = #{leavemessagecontent,jdbcType=VARCHAR},
+      leavemessagetime = #{leavemessagetime,jdbcType=DATE}
+    where leavemessageid = #{leavemessageid,jdbcType=INTEGER}
+  </update>
+</mapper>

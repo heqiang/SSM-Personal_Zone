@@ -1,0 +1,130 @@
+.nr-comment {
+width: 100%;
+border-right: 1px solid #A9A9A9;
+border-left: 1px solid #A9A9A9;
+}
+.nr-comment .nr-comment-con {
+width: 100%;
+}
+.nr-comment .nr-comment-con .nr-comment-nav {
+width: 100%;
+height: 40px;
+border-bottom: 1px solid #F5F5F6;
+border-right: 1px solid #A9A9A9;
+border-left: 1px solid #A9A9A9;
+background-color: #1E8CE0;
+}
+.nr-comment .nr-comment-con .nr-comment-nav .comment-number {
+float: left;
+width: 85px;
+height: 30px;
+text-align: center;
+margin-top: 5px;
+color: white;
+line-height: 2.3em;
+}
+.nr-comment .nr-comment-con .nr-comment-nav .comment-sort {
+float: right;
+width: 110px;
+height: 30px;
+margin-top: 5px;
+margin-right: 10px;
+line-height: 2em;
+color: white;
+}
+.nr-comment .nr-comment-con .comment-content {
+width: 100%;
+margin-top: 10px;
+border-bottom: 1px solid #a9a9a9;
+}
+.nr-comment .nr-comment-con .comment-content .com-users {
+width: 100%;
+min-height: 60px;
+}
+.nr-comment .nr-comment-con .comment-content .com-users .comment-user {
+float: left;
+width: 500px;
+height: 60px;
+}
+.nr-comment .nr-comment-con .comment-content .com-users .comment-user span {
+color: black;
+margin-left: 10px;
+}
+.nr-comment .nr-comment-con .comment-content .com-users .comment-user .comment-user-content {
+width: 90%;
+height: 60px;
+margin-left: 10px;
+}
+.nr-comment .nr-comment-con .comment-content .com-users .comment-time {
+float: right;
+width: 190px;
+height: 60px;
+text-align: center;
+color: #9CADC6;
+font-size: 0.9em;
+text-align: right;
+}
+.nr-comment .nr-comment-con .comment-content .com-users .comment-time div {
+margin-right: 15px;
+}
+.nr-comment .nr-comment-con .comment-content .com-users .comment-time .btn-reply {
+margin-top: 5px;
+border-radius: 4px;
+border: none;
+background-color: #1BB394;
+color: white;
+margin-right: 15px;
+}
+.nr-comment .nr-comment-con .comment-content .user-reply {
+display: none;
+width: 100%;
+height: 50px;
+}
+.nr-comment .nr-comment-con .comment-content .user-reply .reply-in {
+float: left;
+width: 85%;
+height: 50px;
+}
+.nr-comment .nr-comment-con .comment-content .user-reply .reply-in input {
+width: 100%;
+height: 30px;
+margin-top: 10px;
+margin-left: 10px;
+}
+.nr-comment .nr-comment-con .comment-content .user-reply .reply-buttons {
+float: right;
+margin-top: 10px;
+}
+.nr-comment .nr-comment-con .comment-content .user-reply .reply-buttons .btn-comment {
+float: right;
+margin-right: 14px;
+background-color: #1BB394;
+border: none;
+color: white;
+}
+.nr-comment .nr-comment-con .comment-content .user-reply .reply-buttons .btn-cancel {
+float: right;
+margin-right: 10px;
+}
+.nr-comment .nr-comment-con .comment-ipt {
+width: 100%;
+height: 40px;
+border-bottom: 1px solid #A9A9A9;
+margin-top: 10px;
+}
+.nr-comment .nr-comment-con .comment-ipt input {
+display: block;
+width: 92%;
+height: 30px;
+float: left;
+font-size: 14px;
+margin-left: 10px;
+}
+.nr-comment .nr-comment-con .comment-ipt button {
+display: block;
+float: right;
+background-color: #1BB394;
+color: white;
+margin-right: 13px;
+border: none;
+}
